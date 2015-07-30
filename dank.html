@@ -1,0 +1,39 @@
+<html>
+<head>
+    <link href="style.css" type="text/css" rel="stylesheet"></link>
+    <title>
+
+        Mr. Bones' Wild Ride
+
+    </title>
+    <style type="text/css"></style>
+    <style>
+    body{ margin:0px; background:#000; }
+    #bg_container{ height:500px; overflow:hidden; }
+    #bg{ width:100%; height:900px; }
+    #content{ position:absolute; top:0px; padding:30px; color:#FFF; text-shadow:#000 2px 2px; }
+    </style>
+</head>
+<script>
+var vidnames = ["bubble.webm","dank.webm","nyanpasu.webm","nonon.webm"];
+var vidnum = 0;
+function changeVid()
+{
+    var video = document.getElementById("bgvid");
+    video.src= vidnames[(vidnum+1)%4];
+    vidnum = vidnum + 1;
+    video.pause();
+    video.currentTime = 0;
+    video.load();
+}
+</script>
+<body>
+    <video id="bgvid" loop="" autoplay="">
+        <source type="video/webm" src="bubble.webm"></source>
+    </video>
+</div>
+<div id="overlay">
+    <img id="image" style="width:150px;height:150px" src="button.png" onclick="changeVid();"/>
+</div>
+</body>
+</html>
